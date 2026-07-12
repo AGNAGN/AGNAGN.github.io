@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="30" fill="#15131a"/>
+  <path d="M3 32 22 25v14ZM61 32 42 25v14Z" fill="#8098c0" opacity=".9"/>
+  <ellipse cx="32" cy="32" rx="26" ry="11" fill="none" stroke="#d28a9a" stroke-width="2.5" transform="rotate(-18 32 32)"/>
+  <circle cx="32" cy="32" r="12" fill="#8e5b36" stroke="#f4eef2" stroke-width="1.5"/>
+  <circle cx="9" cy="40" r="3" fill="#f1b0bd"/>
+  <text x="32" y="36" text-anchor="middle" fill="#fffafc" font-family="Arial, sans-serif" font-size="9" font-weight="800">AGN</text>
+</svg>
