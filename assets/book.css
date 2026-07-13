@@ -443,8 +443,13 @@ a:hover {
 }
 
 .sidebar-footer a {
+  display: block;
   color: var(--muted);
   text-decoration: none;
+}
+
+.sidebar-footer a + a {
+  margin-top: 5px;
 }
 
 .nav-link__number,
@@ -476,6 +481,8 @@ a:hover {
 .reader-content,
 #reader-content {
   min-width: 0;
+  container-name: reader;
+  container-type: inline-size;
 }
 
 .book-section {
@@ -790,8 +797,8 @@ h3:hover > .heading-permalink,
   position: relative;
   display: grid;
   min-height: 640px;
-  grid-template-columns: minmax(0, 0.9fr) minmax(250px, 1.1fr);
-  gap: clamp(28px, 5vw, 58px);
+  grid-template-columns: minmax(0, 1.15fr) minmax(220px, 0.85fr);
+  gap: clamp(24px, 4cqi, 38px);
   align-items: center;
   margin: calc(clamp(32px, 5vw, 58px) * -1) calc(clamp(26px, 6vw, 68px) * -1) 2.6em;
   padding: clamp(48px, 7vw, 82px) clamp(30px, 6vw, 68px);
@@ -818,6 +825,7 @@ h3:hover > .heading-permalink,
 .cover-hero__visual {
   position: relative;
   z-index: 1;
+  min-width: 0;
 }
 
 .cover-hero__edition {
@@ -832,11 +840,11 @@ h3:hover > .heading-permalink,
 
 .cover-hero h1,
 .book-section .cover-hero h1 {
-  max-width: 11ch;
+  max-width: none;
   margin: 0;
   color: #fffafb;
-  font-size: clamp(2.4rem, 4.7vw, 4.45rem);
-  line-height: 1;
+  font-size: clamp(2.35rem, 7cqi, 3.75rem);
+  line-height: 0.98;
 }
 
 .cover-hero__authors {
@@ -887,13 +895,31 @@ h3:hover > .heading-permalink,
 
 .cover-hero__visual img {
   width: 100%;
-  height: clamp(390px, 43vw, 530px);
+  height: clamp(360px, 48cqi, 480px);
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.16);
   border-radius: 4px;
   box-shadow: 0 24px 54px rgba(0, 0, 0, 0.4);
   object-fit: cover;
   object-position: 54% 50%;
+}
+
+@container reader (max-width: 720px) {
+  .cover-hero {
+    min-height: auto;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .cover-hero__visual {
+    width: min(78%, 330px);
+    justify-self: center;
+  }
+
+  .cover-hero h1,
+  .book-section .cover-hero h1 {
+    max-width: 12ch;
+    font-size: clamp(2.45rem, 11cqi, 3.6rem);
+  }
 }
 
 .cover-hero__visual figcaption {
