@@ -88,9 +88,7 @@
   }
 
   function initializeTheme() {
-    const saved = safeStorageGet("agn-reader-theme");
-    const preferred = window.matchMedia?.("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-    setTheme(saved || preferred, false);
+    setTheme("light", false);
   }
 
   function setFontSize(size, persist = true) {
